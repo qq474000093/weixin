@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+	<head>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<title>发票</title>
+		<link rel="stylesheet" href="css/css.css">
+		<script src="js/rem.js" type="text/javascript"></script>
+		<script type="text/javascript" src="js/json2.js"></script>
+		<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+		<style>
+		
+	</style>
+	</head>
+	<body >
+		<input type="hidden" id="fapiao" th:value="${returnMap}" />
+		<div class="head_bg">
+			<p>凌志网上发票系统</p>
+		</div>
+		<div class="con_bg" id="tbody">
+			<div class="main_onea left" >
+				<p class="sorry left">抱歉，当前手机号没有发票</p>
+				<p class="dian left">........</p>
+				<div class="op"></div>
+			</div>
+		</div>
+		
+			
+	</body>
+	<script type="text/javascript">
+$(function(){
+	var fapiao=$("#fapiao").val();
+
+	 if(fapiao.length == 0){
+		 $(".main_one").remove();
+		}
+	 else{
+		 var obj=JSON.parse(fapiao);
+		 $(".main_onea").remove();
+		   for(var i=0;i<obj.length;i++){
+			   var createobj="<div class='main_one left'><div class='main_box left'><div>姓名</div><p>"+obj[i].custname+"</p></div><a href="+obj[i].pdfurl+"><img src='img/fp.png' alt='' class='fp left' ></a><div class='main_box2 right'><div>时间</div><p>"+obj[i].kpdate+"</p></div></div>";
+				$("#tbody").append(createobj); //把createobj这个变量追加到html中的'body'里
+			}
+		}
+});
+</script>
+</html>

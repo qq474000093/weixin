@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+	metadata-complete="true" id="WebApp_ID" version="3.0">
+   <servlet>
+										   <servlet-name>spring-mvc</servlet-name>
+										   <!-- 记住SpringMVC核心控制器是 DispatcherServlet-->
+										   <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+										   <!-- 手动指定配置文件的名称和位置 -->
+										   <init-param>
+										      <param-name>contextConfigLocation</param-name>
+										      <param-value>classpath:spring-mvc.xml</param-value>
+										   </init-param>
+										   <!-- 以前学servlet的时候没有配置过,表示请求到达的时候创建,如果写成现在这个样子,表示容器启动的时候创建 -->
+										   <load-on-startup>1</load-on-startup>
+										</servlet>
+										<servlet-mapping>
+										   <servlet-name>spring-mvc</servlet-name>
+										   <!-- 也可以写成 *.do, *.action 之类的,但不要写成/*, / 这样的写法,对restful风格有效-->
+										   <url-pattern>/</url-pattern>
+										</servlet-mapping>     
+										<servlet-mapping>
+    <servlet-name>default</servlet-name>
+    <url-pattern>*.css</url-pattern>
+    <url-pattern>*.js</url-pattern>
+    <url-pattern>*.html</url-pattern>
+    <url-pattern>/img/*</url-pattern>
+    <url-pattern>/fonts/*</url-pattern>
+  </servlet-mapping>    
+                                                       
+					
+	
+
+	
+		<!-- session生命周期 -->
+	<session-config>
+		<session-timeout>120</session-timeout>
+	</session-config>
+
+    <filter>
+   <filter-name>WeixinAuthFilter</filter-name>
+   <filter-class>filter.WeixinAuthFilter</filter-class>
+   </filter>
+   
+   <filter-mapping>
+   <filter-name>WeixinAuthFilter</filter-name>
+   <url-pattern>*.do</url-pattern>
+   </filter-mapping>  
+   </web-app>

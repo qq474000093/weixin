@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script type="text/javascript" src="js/json2.js"></script>
+<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+
+<title>Insert title here</title>
+</head>
+<body>
+<table border="1" id="table">
+
+<input type="hidden" id="openid" th:value="${returnMap}" />
+<tr>
+<th>姓名</th>
+<th>时间</th>
+<th>发票地址</th>
+</tr>
+<tbody id="body">
+					  
+</tbody>
+
+</table>
+<p id="msg"  th:text="${msg}" ></p>
+<input type="button" value="注 &nbsp;&nbsp;册"  class="button" id="tip">
+<a href="javascript:WeixinJSBridge.call('closeWindow');">确定</a>
+</body>
+<script type="text/javascript">
+
+function load(){
+    var timer = null;
+    var i = 2;
+    timer = setInterval(function () {
+        i--;
+        console.log(i)
+        if (i <= 0) {
+            clearInterval(timer)
+            WeixinJSBridge.call('closeWindow');
+        }
+    }, 1000)
+}
+load()
+
+
+ 
+
+
+
+
+
+
+
+</script>
+</html>

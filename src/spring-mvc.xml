@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/mvc
+       http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd">
+	   
+			       <!-- 开启扫描 -->
+					<context:component-scan base-package="action"/>
+					
+					
+					<!-- 开启注解驱动 -->
+					<mvc:annotation-driven/>
+					
+					<!-- 视图解析器 -->
+			
+			   
+		
+			
+					<!--springMVC+thymeleaf的跳转页面配置-->
+<bean id="templateResolver" class="org.thymeleaf.spring4.templateresolver.SpringResourceTemplateResolver">
+         <property name="prefix" value="/" />
+         <property name="suffix" value=".html" />
+         <property name="templateMode" value="HTML5" />
+         <property name="cacheable" value="false" />
+       </bean>
+
+       <bean id="templateEngine" class="org.thymeleaf.spring4.SpringTemplateEngine">
+          <property name="templateResolver" ref="templateResolver" />
+       </bean>
+
+       <bean class="org.thymeleaf.spring4.view.ThymeleafViewResolver">
+         <property name="templateEngine" ref="templateEngine" />
+        <property name="characterEncoding" value="UTF-8"/>
+       </bean>
+   
+		
+     <!--自定义任务-->      
+    <bean id="birthdayReminder" class="timetask.RefreshAccrssTokenTask"></bean>    
+        
+    <!-- ScheduledTimerTask类是对TimerTask的包装器实现，这样你就可以为这个任务定义触发器信息。 -->    
+    <bean id="birthdayReminderTimerTask"    
+        class="org.springframework.scheduling.timer.ScheduledTimerTask">    
+        <!-- 设置启动延迟 -->    
+        <property name="delay">    
+            <value>1000</value>    
+        </property>    
+        <!-- 后续延迟 -->    
+        <property name="period">    
+            <value>6000000</value>    
+        </property>    
+        <!-- 指定触发器信息 -->    
+        <property name="timerTask">    
+            <ref local="birthdayReminder" />    
+        </property>    
+    </bean>    
+        
+    <!-- 使用TimerFactoryBean类，你可以让Spring使用配置创建触发器，并为一组指定的ScheduledTimerTask bean自动创建Timer实例。 -->    
+    <bean id="timerFactory"    
+        class="org.springframework.scheduling.timer.TimerFactoryBean">    
+        <property name="scheduledTimerTasks">    
+            <list>    
+                <ref local="birthdayReminderTimerTask" />                 
+            </list>    
+        </property>            
+    </bean>  
+
+
+     
+					
+					
+</beans>

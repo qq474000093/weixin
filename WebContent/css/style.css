@@ -1,0 +1,90 @@
+
+/*css解析器解析方式*/
+/*@charset "utf-8";*/
+
+/*引入字体样式*/
+@font-face{font-family:'simsun';src:url('../fonts/simsun.ttc');}
+@font-face{font-family:'FontAwesome';src:url('../fonts/苹方黑体-准-简.ttf');}
+.logo {padding:0;}
+#myCarousel {margin: 50px 0 0 0;}
+/*#navbar-collapse ul {margin-top:0;}*/
+/*.carousel-inner img {margin: 0px auto;}*/
+/*.carousel-control {font-size: 100px;}*/
+
+/*轮播样式*/
+.item{position: relative;top: 25.0px;}
+.carousel-indicators li{background: red;border: red;}
+
+/*积分商城头部样式设置*/
+.head{background: black;color: #ffffff;}
+.head_word{float: left;font-family:FontAwesome;}
+.navbar-header{text-align: center;width: 111%;font-family:FontAwesome;font-size: 4.3vmax;line-height: 55px;}
+.navbar{position: absolute;}
+.glyphicon-menu-left{font-size: 30px;line-height: 55px;font-weight:100;}
+
+/*签到领积分部分样式设置*/
+.pull{font-size:2.7vmax;width: 100%;height: 7.0vh;line-height: 7.0vh;border-bottom: 1px solid rgba(0,0,0,0.2)}
+.sign{font-size: 2.7vmax;color: #ffae00;width: 25%;height: 6.0vh;border: 2px solid rgba(0,0,0,0.2);text-align: center;line-height: 6.0vh;border-radius: 6.0vh;}
+.pills{font-size: 3.0vmax;}
+.jifenshow{border-bottom: 7px solid rgba(0,0,0,0.1);width: 100%;height: 13.5vh;}
+
+/*积分礼品标题样式设置*/
+.shop_title{width: 100%;height: 8.5vh;border-bottom: 1px solid rgba(0,0,0,0.2);background: url("../img/1.png")no-repeat;background-position:50%;border-bottom: 1px solid rgba(0,0,0,0.2)}
+.shop_title_2{text-align: center;width: 70%;line-height: 8.5vh;font-size:3.5vmax;font-family:FontAwesome; }
+.shop_title_1{height: 5.0vh;border-radius: 5.0vh;border: 1px solid rgba(0,0,0,0.3);width: 30%;line-height: 5.0vh;text-align: center;color: #c10000;font-family:FontAwesome;margin-top: 10px;}
+.shop_title_3{margin-top:-35px;color: #333333;font-family:FontAwesome; font-size: 2.5vmax;}
+
+/*积分商城商品展示区域样式设置*/
+.shops{width: 100%;height: 26.0vh;border-bottom: 1px solid rgba(0,0,0,0.2);color: #000000;}
+.information{margin-top:5.0vh;}
+.shops_img{width:30%;height:21.0vh;overflow: hidden;margin-top: 20px;}
+.shops_img img{width: 15.0vh;height: 21.0vh;}
+.information_one{font-size: 2.45vmax;}
+.information_two{font-size: 2.2vmax;}
+
+/*脚部区域的样式设置*/
+.shops_img{width:30%;height: 85%;overflow: hidden;margin-top: 20px;}
+.shops_img img{width: 115px;height: 126px;}
+.page-footer {width: 100%;height: 70px;background-color:white;border-top: 1px solid #dfdfdf;position: fixed;bottom:0;left: 0;}
+.page-footer ul {width: 100%;background-color:white;margin-left: -5%;}
+.page-footer ul li {list-style: none;float: left;width:20%;text-align: center;padding: 0.2% 0 2%;}
+.page-footer ul li a {width: 100%;display: block;}
+.page-footer ul .active a p {color: #f44623;margin-bottom: 0;}
+.page-footer ul .active {width: 20%;}
+.page-footer ul li img {width: 20%;}
+.page-footer ul li i {font-size: 5rem;color: #60636c;}
+.page-footer ul .active i {color: #f44623;}
+#footer{background: white;z-index: 100;}
+.active{margin-top: -25px;}
+
+/*css脚步样式的响应式调解*/
+@media screen and (min-width:300px) and (max-width:500px) {
+    .page-footer {width: 100%;height: 70px;background-color:white;border-top: 1px solid #dfdfdf;position: fixed;bottom:0;left: 0;}
+    .page-footer ul li {list-style: none;float: left;width:20%;text-align: center;padding: 0% 0 5%;}
+    .page-footer ul li i img {width: 50px;height: 50px}
+    .jifen{margin-bottom: 8px;}
+    .mine{margin-bottom: 7px;}
+  }
+/*手机样式的调整*/
+ @media only screen and (min-width:411px) and (max-width:823px) {
+      	.navbar-header{font-size: 4.0vmax;}
+	    .shop_title_3{margin-top:-48px;color: #333333;font-family:FontAwesome; font-size: 2.1vmax;}
+	    .sign{font-size: 2.7vmax;color: #ffae00;width: 27%;height: 5.0vh;border: 2px solid rgba(0,0,0,0.2);text-align: center;line-height: 4.8vh;border-radius: 6.0vh;}
+	    .jifenshow{border-bottom: 7px solid rgba(0,0,0,0.1);width: 100%;height: 11.5vh;}
+	    .shop_title{width: 100%;height: 8.5vh;border-bottom: 1px solid rgba(0,0,0,0.2);background: url("../img/1.png")no-repeat;background-position:50%;border-bottom: 1px solid rgba(0,0,0,0.2)}
+        .shop_title_2{text-align: center;width: 70%;line-height: 8.5vh;font-size:3.5vmax;font-family:FontAwesome; }
+        .shop_title_1{height: 5.0vh;border-radius: 5.0vh;border: 1px solid rgba(0,0,0,0.3);width: 25%;line-height: 5.0vh;text-align: center;color: #c10000;font-family:FontAwesome;margin-top: 10px;}
+        .information{margin-top:3.0vh;width:68%;}
+        .shops{width: 100%;height: 22.0vh;border-bottom: 1px solid rgba(0,0,0,0.2);}
+	}
+@media only screen and (min-width:375px) and (max-width:812px) {
+      	.navbar-header{font-size: 4.0vmax;}
+	    .shop_title_3{margin-top:-48px;color: #333333;font-family:FontAwesome; font-size: 2.1vmax;}
+	    .sign{font-size: 2.7vmax;color: #ffae00;width: 27%;height: 5.0vh;border: 2px solid rgba(0,0,0,0.2);text-align: center;line-height: 4.8vh;border-radius: 6.0vh;}
+	    .jifenshow{border-bottom: 7px solid rgba(0,0,0,0.1);width: 100%;height: 11.5vh;}
+	    .shop_title{width: 100%;height: 8.5vh;border-bottom: 1px solid rgba(0,0,0,0.2);background: url("../img/1.png")no-repeat;background-position:50%;border-bottom: 1px solid rgba(0,0,0,0.2)}
+        .shop_title_2{text-align: center;width: 70%;line-height: 8.5vh;font-size:3.5vmax;font-family:FontAwesome; }
+        .shop_title_1{height: 5.0vh;border-radius: 5.0vh;border: 1px solid rgba(0,0,0,0.3);width: 25%;line-height: 5.0vh;text-align: center;color: #c10000;font-family:FontAwesome;margin-top: 10px;}
+        .information{margin-top:3.0vh;width:68%;}
+        .shops{width: 100%;height: 22.0vh;border-bottom: 1px solid rgba(0,0,0,0.2);}
+	}

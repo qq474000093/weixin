@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+    <title>积分商城</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" type="" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="js/jquery-1.8.2.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/getJifen.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+</head>
+<body>
+<!--积分商城的开始-->
+<!--积分商城头部开始-->
+<nav class="navbar navbar-default navbar-fixed-top" style="position: fixed;">
+    <div class="container">
+        <div class="navbar-header">
+            <a href="javascript :;" onClick="javascript :history.back(-1);" class="navbar-brand logo">
+                &nbsp;<span class="glyphicon glyphicon-menu-left pull-left"></span>
+            </a>
+            <span>积分商城</span>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+                <li><a href="#jifen"><span class="glyphicon glyphicon-list"></span> 积分值</a></li>
+                <li><a href="#shangpin"><span class="glyphicon glyphicon-fire"></span> 商品区</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!--积分商城头部结束-->
+<!--轮播开始-->
+<div id="myCarousel" class="carousel slide">
+	<!-- 轮播（Carousel）指标 -->
+	<ol class="carousel-indicators">
+		<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+		<li data-target="#myCarousel" data-slide-to="1"></li>
+		<li data-target="#myCarousel" data-slide-to="2"></li>
+	</ol>   
+	<!-- 轮播（Carousel）项目 -->
+	<div class="carousel-inner">
+		<div class="item active">
+			<img src="img/slide1.jpg" alt="First slide">
+		</div>
+		<div class="item">
+			<img src="img/slide2.jpg" alt="Second slide">
+		</div>
+		<div class="item">
+			<img src="img/slide3.jpg" alt="Third slide">
+		</div>
+	</div>
+	<!-- 轮播（Carousel）导航 -->
+	<a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+		<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+		<span class="sr-only">Previous</span>
+	</a>
+	<a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+		<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+		<span class="sr-only">Next</span>
+	</a>
+</div> 
+<!--轮播结束-->
+<!--签到领积分开始-->
+<div  class="container pull">
+    <div class="pull-left">签到领积分</div>
+    <div class="pull-right">凌志好礼相送
+        <span class="glyphicon glyphicon-chevron-right small" style="color: rgba(0, 0, 0,0.4); font-size: 15px;"></span>
+    </div>
+</div>
+<!--签到领积分结束-->
+<!--积分显示区域开始-->
+<div  class="container jifenshow" id="jifen">
+    <div style="height: 20px"></div>
+    <div class="pull-left">
+        <div class="pills">
+            <span class="jifen">我的积分:</span>
+            <span class="fa fa-database" style="color:#ffae00;" id="myjifen"></span>
+        </div>
+        <div class="text-muted">
+            积分获取规则
+        </div>
+    </div>
+    <div class="pull-right sign">
+    	<a href="https://h5.youzan.com/v2/apps/checkin" style="color:#ffae00;">签到</a>
+    </div>
+</div>
+<!--积分显示区域结束-->
+<!--商品区域标题开始-->
+<div class="container shop_title">
+    <div class="pull-left shop_title_1">
+        可换的礼品
+    </div>
+    <div class="shop_title_2">
+        积分礼品区
+    </div>
+    <div class="pull-right shop_title_3">
+        更多好礼物
+        <span class="glyphicon glyphicon-chevron-right small" style="color: rgba(0, 0, 0,0.4);"></span>
+    </div>
+</div>
+<!--商品区域标题结束-->
+<!--商品展示开始-->
+<!--1件商品-->
+<div class="container shops">
+	<a href="https://h5.youzan.com/v2/goods/3f2ulte3409s4" style="color: black;">
+    <div class="pull-left shops_img">
+        <img src="img/xiangzi.jpg">
+    </div>
+    <div class="pull-right information">
+        <div style="height: 3%"></div>
+        <div class="information_one">拉杆箱</div>
+        <br>
+        <div class="information_two">
+            <span>积分兑换：</span>
+            <span class="fa fa-database" style="color:#ffae00;">1490</span>
+        </div>
+        <div class="information_two">
+            <span>快速兑换：</span>
+            <span class="fa fa-database" style="color:#ffae00;">990&nbsp;+&nbsp;￥50</span>
+        </div>
+        <div>
+            <div class="pull-left">
+                <span>原价：￥</span>
+                <sapn>149.00</sapn>
+            </div>
+            <div class="pull-right">
+                <span>限量</span>
+                <span>239</span>
+                <sapn>件</sapn>
+            </div>
+        </div>
+    </div>
+    </a>
+</div>
+<!--第2件商品-->
+<div class="container shops" >
+	<a href="https://h5.youzan.com/v2/goods/3erruwe08omt0"style="color: black;">
+    <div class="pull-left shops_img">
+        <img src="img/jiashiqi.jpg">
+    </div>
+    <div class="pull-right information">
+        <div style="height: 3%"></div>
+        <div class="information_one">空气加湿器</div>
+        <br>
+        <div class="information_two">
+            <span>积分兑换：</span>
+            <span class="fa fa-database" style="color:#ffae00;"> 1490</span>
+        </div>
+         <div class="information_two">
+            <span>快速兑换：</span>
+            <span class="fa fa-database" style="color:#ffae00;">990&nbsp;+&nbsp;￥50</span>
+        </div>
+        <div>
+            <div class="pull-left">
+                <span>原价：￥</span>
+                <sapn>149.00</sapn>
+            </div>
+            <div class="pull-right">
+                <span>限量</span>
+                <span>10</span>
+                <sapn>件</sapn>
+            </div>
+        </div>
+    </div>
+    </a>
+</div>
+<div style="height: 100px;"></div>
+<!--商品展示结束-->
+<!--footer start-->
+<footer class="page-footer fixed-footer" id="footer">
+    <ul>
+        <li>
+            <a href="https://h5.youzan.com/v2/feature/WXqSg3D8C4">
+                <i><img src="img/3.png"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://h5.youzan.com/v2/feature/3AlGhKd2Nw">
+                <i><img src="img/2.png"></i>
+            </a>
+        </li>
+        <li class="active">
+            <a href="https://h5.youzan.com/v2/cart/19301140">
+                <i><img src="img/car.png"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://h5.youzan.com/v2/ump/pointsstore/shop.html?kdt_id=19301140">
+                <i><img src="img/5.png" class="jifen"></i>
+            </a>
+        </li>
+        <li>
+            <a href="https://h5.youzan.com/v2/usercenter/ruzcfh8i">
+                <i><img src="img/4.png" class="mine"></i>
+            </a>
+        </li>
+    </ul>
+</footer>
+<!--footer end-->
+<!--积分商城结束-->
+<script type="text/javascript">
+    $(function () {
+        //轮播自动播放
+        $('#myCarousel').carousel({
+            //自动4秒播放
+            interval : 2000,
+        });
+//        设置垂直居中
+        $('.carousel-control').css('line-height', $('.carousel-inner img').height() + 'px');
+        $(window).resize(function () {
+            var $height = $('.carousel-inner img').eq(0).height() ||
+                $('.carousel-inner img').eq(1).height() ||
+                $('.carousel-inner img').eq(2).height();
+            $('.carousel-control').css('line-height', $height + 'px');
+        });
+     });
+</script>
+</body>
+</html>
