@@ -47,6 +47,7 @@ public YouzanSalesmanAccountsGetResult getAll(@RequestParam long pageNo,long Pag
 	YouzanSalesmanAccountsGet youzanSalesmanAccountsGet = new YouzanSalesmanAccountsGet();
 	youzanSalesmanAccountsGet.setAPIParams(youzanSalesmanAccountsGetParams);
 	YouzanSalesmanAccountsGetResult result = client.invoke(youzanSalesmanAccountsGet);
+	System.out.println(result);
 
 	return result;
 }

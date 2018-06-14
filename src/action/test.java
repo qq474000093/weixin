@@ -14,9 +14,11 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import model.*;
 import org.apache.http.client.HttpClient;
 import org.apache.http.conn.ConnectTimeoutException;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import com.alibaba.fastjson.JSON;
@@ -25,10 +27,9 @@ import com.alibaba.fastjson.JSONObject;
 import action.weixinpeoject.Register;
 import dao.impl.EventPushDao;
 import json.InterfaceAtivation;
-import model.EventPush;
-import model.WebAuthAccessToken;
-import model.WeixinContext;
-import model.WeixinFinalValue;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
 import util.HttpClientUtils;
 import util.HttpRequest;
 import util.JsonUtil;
@@ -66,6 +67,21 @@ public class test {
 		
 		
 	}
+@RequestMapping(value="/youhui",method =RequestMethod.GET)
+
+	public String youhui(ModelMap mod,HttpServletRequest req,HttpServletResponse resp){
+//	String code = req.getParameter("code");
+//	String msg = WeixinUtil.getOpenId(code);
+//	WebAuthAccessToken at = (WebAuthAccessToken) JsonUtil.string2Obj(msg, WebAuthAccessToken.class);
+//	String openid=at.getOpenid();
+
+
+	mod.put("openid","213213");
+
+	return "ttt";
+	}
+
+
 	
 
 

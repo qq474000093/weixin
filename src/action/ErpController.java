@@ -2,10 +2,7 @@ package action;
 
 
 
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,9 +13,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.alibaba.fastjson.JSONObject;
+
 
 import model.ErpFinalValue;
+
 import util.WebUtils;
 
 
@@ -26,21 +24,23 @@ import util.WebUtils;
 public class ErpController {
 	
 	@RequestMapping(value="/erpget",method=RequestMethod.POST)
+
 	public void getInfo(HttpServletRequest req,HttpServletResponse resp) throws Exception {
+        resp.setContentType("text/html;charset=utf-8");
+        resp.getWriter().println("获取更新");
 		Map map=new HashMap<>();
-		resp.setContentType("text/html;charset=utf-8");
 		String token = req.getParameter("token");
 		System.out.println(token);
-		
 		String ip=WebUtils.getIpAddr(req);
-		if(ip.equals(ErpFinalValue.IP)&&token!=null&&token.equals(ErpFinalValue.TOKEN)) {
-	
-			System.out.println("进入方法了");
-		
-	
+		System.out.println(ip);
+
+		if(ErpFinalValue.IP.contains(ip)&&token!=null&&token.equals(ErpFinalValue.TOKEN)) {
+
+
+
 		}
 		else {
-			if(!ip.equals(ErpFinalValue.IP)) {
+			if(!ErpFinalValue.IP.contains(ip)) {
 				map.put("errorMsg", ip+"p地址无权限调用!");
 				map.put("errorCode", "6001");
 				resp.getWriter().println(map);
@@ -49,10 +49,11 @@ public class ErpController {
 				map.put("errorCode", "6002");
 				resp.getWriter().println(map);
 			}
+
 		}
-	
+
 	}
-	
+
 	
 
 }
