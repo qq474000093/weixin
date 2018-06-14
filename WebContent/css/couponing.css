@@ -1,0 +1,47 @@
+@charset "utf-8";
+/* CSS Document */
+*{margin:0; padding:0;}
+ul li{list-style: none;}
+a{text-decoration: none;}
+.left{ display:inline; float:left;}
+.right{ display:inline; float:right;}
+.clear:after{ content:''; display:block; clear:both;}
+.clear{ zoom:1;}
+.box{ width:15.25rem; margin:0 auto;}
+
+header{width:100%; height:2.075rem; box-shadow: 0 2px 1px #ddd;}
+header>p{width:33.3%; height:1.95rem; line-height: 1.95rem; text-align: center; float: left; font-size: 0.65rem; font-family: '黑体'; 
+	color:#333; border-bottom: 0.125rem solid transparent;}
+.bor{border-bottom: 0.125rem solid #837a7b; color:#009933;}
+.yhq_a{width:15.25rem; height:5.5rem; background:url(../images/yhq.jpg) no-repeat center; background-size: cover; margin-top:0.425rem;
+	position: relative; box-shadow: 0 3px 2px #ccc;}
+.yhq_a>h2{font-size: 0.85rem; font-family: '黑体'; color:#009933; position: absolute; top:1.25rem; left:2.675rem;}
+.yhq_a>p{font-size: 0.3rem; font-family: '黑体'; color:#009933; position: absolute; top:3rem; left:3rem;}
+
+.yhq_a>span{font-size: 0.5rem; font-family: '黑体'; color:#000; position: absolute; top:4.4rem; left:3.8rem;}
+.yhq_a .dsy{width:3.275rem; height:3.15rem; position: absolute; top:0.45rem; right:0.7rem;}
+section>div{display: none; width:100%;}
+.xianshi{display: block;}
+.yhq_b{width:15.25rem; height:5.5rem; background:url(../images/old.jpg) no-repeat center; background-size: cover; margin-top:0.425rem;
+	position: relative; box-shadow: 0 3px 2px #ccc;}
+.yhq_b>h2{font-size: 0.85rem; font-family: '黑体'; color:#009933; position: absolute; top:1.25rem; left:2.675rem;}
+.yhq_b>p{font-size: 0.3rem; font-family: '黑体'; color:#009933; position: absolute; top:3rem; left:3rem;}
+.yhq_b>span{font-size: 0.5rem; font-family: '黑体'; color:#000; position: absolute; top:4.4rem; left:3.8rem;}
+.yhq_c{width:15.25rem; height:5.5rem; background:url(../images/ygq.jpg) no-repeat center; background-size: cover; margin-top:0.425rem;
+	position: relative; box-shadow: 0 3px 2px #ccc;}
+.yhq_c>h2{font-size: 0.85rem; font-family: '黑体'; color:#7d7d7d; position: absolute; top:1.25rem; left:2.675rem;}
+.yhq_c>p{font-size: 0.45rem; font-family: '黑体'; color:#009933; position: absolute; top:3rem; left:4rem;}
+.yhq_c>span{font-size: 0.3rem; font-family: '黑体'; color:#ccc; position: absolute; top:4.4rem; left:3.8rem;}
+#guoqi{font-size: 0.3rem; font-family: '黑体'; color:#7d7d7d; position: absolute; top:3rem; left:3rem;}
+
+body{width:100%; height:100%;}
+.tanchu{width:100%; height:100%; background-color: rgba(0,0,0,.5); position: fixed; top:0; left:0; z-index: 999; display: none;}
+.tanchu p{font-size: 70px; color:#fff; position: absolute; top:50px; right:60px;}
+#pid{font-size: 0.45rem;font-family: '黑体'; color:#000; position: absolute; top:4.4rem; left:3.8rem;}
+.yhq_b>div{font-size: 0.5rem; font-family: '黑体'; color:#000; position: absolute; top:4.4rem; left:3.8rem;}
+#copy canvas{
+	width:50%;
+	position: absolute;
+	top:200px;
+	left:25%;
+}

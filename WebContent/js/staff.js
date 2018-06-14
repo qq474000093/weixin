@@ -72,6 +72,8 @@ function f1(){
 			pageNo:pageNo
 		},
 		success:function(data){
+
+			console.log(data);
 			if(data){
 				var html="";
 				var obj=data.accounts;

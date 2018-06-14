@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>优惠券</title>
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/rem.js"></script>
+	<script src="js/jquery.qrcode.min.js"></script>
+	<script src="js/couponing.js"></script>
+	<link rel="stylesheet" href="css/couponing.css">
+
+</head>
+<body>
+<input type="hidden" id="openid" th:value="${openid}" />
+	<div class="tanchu">
+		<p>×</p>
+		<div id="copy"></div>
+	</div>
+	<header>
+		<p class="bor">待使用</p>
+		<p id="used">已使用</p>
+		<p id="overdue">已过期</p>
+	</header>
+	<section>
+		<div class="xianshi">
+			<!--<div class="box">-->
+				<!--<div class="yhq_a left">-->
+					<!--<h2>30天购机立减38元</h2>-->
+					<!--<p>使用期限：<span>2018.6.1——2018.7.1</span></p>-->
+					<!--<div id="pid">优惠券ID:<span id="copid" >111升5435435435345</span></div>-->
+
+					<!--<img src="images/dsy.jpg" alt="" class="dsy"/>-->
+				<!--</div>-->
+				<!-- <div class="yhq_a left">
+					<h2>30天购机立减38元</h2>
+					<p>使用期限：<span>2018.6.1——2018.7.1</span></p>
+					<span>优惠券ID：46435 45646 78415 42158</span>
+					<img src="images/dsy.jpg" alt="" class="dsy">
+				</div> -->
+
+
+		</div>
+		<div class="used">
+			<!--<div class="box">-->
+				<!--<div class="yhq_b left">-->
+					<!--<h2>30天购机立减38元</h2>-->
+					<!--<p>使用期限：<span>2018.6.1——2018.7.1</span></p>-->
+					<!--<span>优惠券ID：46435 45646 78415 42158</span>-->
+				<!--</div>-->
+			<!--</div>-->
+		</div>
+		<div class="overdue">
+			<!--<div class="box">-->
+				<!--<div class="yhq_c left">-->
+					<!--<h2>30天购机立减38元</h2>-->
+					<!--<p>使用期限：<span>2018.6.1——2018.7.1</span></p>-->
+					<!--<span>优惠券ID：46435 45646 78415 42158</span>-->
+				<!--</div>-->
+			<!--</div>-->
+		</div>
+	</section>
+</body>
+</html>
+
