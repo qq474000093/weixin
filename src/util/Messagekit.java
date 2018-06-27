@@ -11,6 +11,9 @@ import java.util.Map;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 
+import com.alibaba.fastjson.JSON;
+import json.Updatauser;
+import model.WeixinContext;
 import org.dom4j.DocumentException;
 import org.dom4j.DocumentHelper;
 import org.dom4j.Element;
@@ -62,7 +65,9 @@ public class Messagekit {
 			if(eventType.equals(WeixinFinalValue.EVENT_USER_GET_CARD)) {
 				return handlerEvent_User_Get_Card(msgMap);
 			}
-			
+			else if(eventType.equals(WeixinFinalValue.EVENT_USER_VIEW_CARD)){
+				return handlerEvent_User_View_Card(msgMap);
+			}
 		}
 		//如果是文本事件
 		else if(msgType.equals(WeixinFinalValue.MSG_TEXT_TYPE)) {
@@ -70,6 +75,32 @@ public class Messagekit {
 		}
 		return null; 
 	}
+
+	private static String handlerEvent_User_View_Card(Map<String,String> msgMap) {
+      String openid=msgMap.get("FromUserName");
+      Map map=ErpMessageKit.Getuser(openid);
+      int init_bonus=(Integer)map.get("integral");
+      System.out.println("用户积分为"+init_bonus);
+      updatuserBonus(init_bonus,msgMap);
+      return null;
+	}
+   //更新用户积分
+	private static void updatuserBonus( int init_bonus,Map<String,String> msgMap) {
+		String url="https://api.weixin.qq.com/card/membercard/updateuser?access_token=TOKEN";
+		url=url.replace("TOKEN",WeixinContext.getAccessToken());
+		String card_id=msgMap.get("CardId");
+		String code=msgMap.get("UserCardCode");
+		Updatauser up=new Updatauser();
+		up.setCard_id(card_id);
+		up.setCode(code);
+		up.setBonus(init_bonus);
+		String param=JSON.toJSONString(up);
+		System.out.println("参数为----"+param);
+		String json=HttpRequest.sendPost(url, param);
+		System.out.println("更新信息为------"+json);
+
+		}
+
 	//处理领取事件
 	private static String handlerEvent_User_Get_Card(Map<String, String> msgMap) {
 		EventPushService epdao=new EventPushDao();

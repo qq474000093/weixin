@@ -63,7 +63,7 @@ function coupon() {
                     if(isDateBetween(dateString, obj[i].sdate, obj[i].edate)==true){
                         html += "<div class='box'><div class='yhq_a left'><h2>" +obj[i].couponname+
                             "</h2><p>使用期限：<span>" + obj[i].sdate + "——" + obj[i].edate + "</span></p><div id='pid'>优惠券ID:<a class='copid' id='id' value='"+obj[i].couponno+"'>"+obj[i].couponno+
-                            "</a></div><img src='images/dsy.jpg' alt='' class='dsy'/></div>";
+                            "</a></div><div id='fu'>会员服务号<div>"+obj[i].servpactno+"</div></div><img src='images/dsy.jpg' alt='' class='dsy'/></div>";
                     }
                     }
                 $(".xianshi").html(html);
@@ -162,7 +162,7 @@ function used(){
                 for (var i = 0; i < obj.length; i++) {
                     html += "<div class='box'><div class='yhq_b left'><h2>" +obj[i].couponname+
                             "</h2><p>使用期限：<span>" + obj[i].sdate + "——" + obj[i].edate + "</span></p><div id='pid'>优惠券ID:<a class='copid' id='id' value='"+obj[i].couponno+"'>"+obj[i].couponno+
-                            "</a></div></div>";
+                            "</a></div><div id='fu'>会员服务号<div>"+obj[i].servpactno+"</div></div></div>";
                     }
                 $(".used").html(html);
             }
@@ -191,7 +191,7 @@ function overdue(){
                     if (isDateBetween(dateString, obj[i].sdate, obj[i].edate) == false) {
                         html += "<div class='box'><div class='yhq_c left'><h2>" + obj[i].couponname +
                             "</h2><p id='guoqi'>使用期限：<span >" + obj[i].sdate + "——" + obj[i].edate + "</span></p><div id='pid'>优惠券ID:<a class='copid' id='id' value='" + obj[i].couponno + "'>" + obj[i].couponno +
-                            "</a></div></div>";
+                            "</a></div><div id='fu'>会员服务号<div>"+obj[i].servpactno+"</div></div></div>";
                     }
                 }
                 $(".overdue").html(html);

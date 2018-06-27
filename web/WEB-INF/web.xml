@@ -27,6 +27,7 @@
     <url-pattern>*.html</url-pattern>
     <url-pattern>/img/*</url-pattern>
     <url-pattern>/fonts/*</url-pattern>
+											<url-pattern>/images/*</url-pattern>
   </servlet-mapping>    
                                                        
 					

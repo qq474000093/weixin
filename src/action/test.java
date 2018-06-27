@@ -74,12 +74,15 @@ public class test {
 //	String msg = WeixinUtil.getOpenId(code);
 //	WebAuthAccessToken at = (WebAuthAccessToken) JsonUtil.string2Obj(msg, WebAuthAccessToken.class);
 //	String openid=at.getOpenid();
+	mod.put("openid", "213213");
+	return null;
+}
 
+public  void updateuser(){
+		String url="https://api.weixin.qq.com/card/membercard/updateuser?access_token=TOKEN";
+		url=url.replace("TOKEN",WeixinContext.getAccessToken());
 
-	mod.put("openid","213213");
-
-	return "ttt";
-	}
+}
 
 
 	
